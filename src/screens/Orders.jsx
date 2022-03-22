@@ -2,6 +2,7 @@ import useFetchedDataHandler from "../hooks/use-fetched-data-handler";
 import headerImage from "../assets/images/orders-header.png";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
+import OrdersItem from "../components/OrdersItem";
 
 export default function Orders() {
   const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
@@ -17,7 +18,7 @@ export default function Orders() {
         alt="a white dog sitting up, with its front legs in the air"
       />
       <h2>Welcome, Fulano</h2>
-
+      <OrdersItem />
       <button>Go back</button>
     </section>
   );
