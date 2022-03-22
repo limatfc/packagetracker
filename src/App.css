@@ -20,23 +20,28 @@ body {
 h1 {
   font-size: 30px;
   font-family: "Ubuntu";
+  color: #515e66;
 }
 
 h2 {
   font-size: 25px;
   font-family: "Ubuntu";
+  color: #515e66;
 }
 
 h3 {
   font-size: 22px;
   font-family: "Ubuntu";
+  color: #515e66;
 }
 
 p {
   font-size: 18px;
   font-family: "Ubuntu";
+  color: #515e66;
 }
 small {
   font-size: 16px;
   font-family: "Ubuntu";
+  color: #515e66;
 }
