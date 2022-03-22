@@ -1,0 +1,42 @@
+html,
+body {
+  margin: 0;
+  background-color: #f1f0eb;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu"),
+    url(./assets/fonts/Ubuntu-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu"), url(./assets/fonts/Ubuntu-Bold.ttf) format("truetype");
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 30px;
+  font-family: "Ubuntu";
+}
+
+h2 {
+  font-size: 25px;
+  font-family: "Ubuntu";
+}
+
+h3 {
+  font-size: 22px;
+  font-family: "Ubuntu";
+}
+
+p {
+  font-size: 18px;
+  font-family: "Ubuntu";
+}
+small {
+  font-size: 16px;
+  font-family: "Ubuntu";
+}
