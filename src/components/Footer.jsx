@@ -2,10 +2,11 @@ import telephoneIcon from "../assets/icons/telephone.png";
 import emailIcon from "../assets/icons/email.png";
 import instagramIcon from "../assets/icons/instagram.png";
 import facebookIcon from "../assets/icons/facebook.png";
+import "../styles/components/Footer.css";
 
 export default function Footer() {
   return (
-    <section>
+    <section className="footer-wrapper">
       <p> Contact us</p>
       <label>
         <img src={telephoneIcon} alt="a telefone icon with a arrow on top" />

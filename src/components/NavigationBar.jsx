@@ -1,20 +1,23 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/icons/logo.png";
+import "../styles/components/NavigationBar.css";
 
 export default function NavigationBar() {
   return (
-    <section>
-      <label>
-        <Link to="/">
-          <img
-            src={logo}
-            alt="A black dachshund standing up, looked from the side."
-          />
-          DachsHunt
-        </Link>
-      </label>
-      <Link>About us</Link>
-      <Link>FAQ</Link>
+    <section className="navigation-wrapper">
+      <Link className="button-navigation" to="/">
+        <img
+          src={logo}
+          alt="A black dachshund standing up, looked from the side."
+        />
+        <span>DachsHunt</span>
+      </Link>
+      <Link className="button-navigation margin" to="/about">
+        About us
+      </Link>
+      <Link className="button-navigation" to="/faq">
+        FAQ
+      </Link>
     </section>
   );
 }

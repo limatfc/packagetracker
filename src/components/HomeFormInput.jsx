@@ -1,11 +1,13 @@
+import "../styles/components/HomeFormInput.css";
+
 export default function HomeFormInput({
   children,
   valueChangeHandler,
   placeholder,
 }) {
   return (
-    <div>
-      <label>
+    <div className="input-wrapper">
+      <label className="label-wrapper">
         {children}
         <input
           type="number"

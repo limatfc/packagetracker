@@ -1,0 +1,18 @@
+.form-wrapper {
+  margin: 8px;
+}
+
+.form-wrapper h3 {
+  margin: 24px 0;
+  font-weight: 400;
+}
+
+.form-wrapper button {
+  display: block;
+  height: 60px;
+  background-color: #dcbda1;
+  width: 370px;
+  border-radius: 50px;
+  border: none;
+  margin: 24px 0;
+}

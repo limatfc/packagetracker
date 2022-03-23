@@ -7,7 +7,7 @@ export default function Home({
   enteredValuesHandler,
 }) {
   return (
-    <div>
+    <div className="home-wrapper">
       <section className="hero-wrapper">
         <h1>DachsHunt</h1>
         <h1>We hunt your package as if it were a badger.</h1>
