@@ -5,13 +5,13 @@ import Error from "../components/Error";
 import Loading from "../components/Loading";
 import OrdersItem from "../components/OrdersItem";
 
-export default function Orders({ showOrdersScreenHandler }) {
+export default function Orders({ showOrdersScreenHandler, enteredValues }) {
   const navigate = useNavigate();
-  const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
-  const { fetchedData, isLoading, fetchError } = useFetchedDataHandler(url);
 
-  if (isLoading) return <Loading />;
-  if (fetchError) return <Error />;
+  const { fetchedData, fetchStatus } = useFetchedDataHandler();
+
+  if (fetchStatus === 0) return <Loading />;
+  if (fetchStatus === 2) return <Error />;
 
   function onClickHandler() {
     showOrdersScreenHandler();
