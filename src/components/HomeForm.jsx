@@ -10,20 +10,14 @@ export default function HomeForm({
   const navigate = useNavigate();
 
   const {
-    inputedValue: parcelInputedValue,
-    valueIsValid: parcelIsValid,
-    valueChangeHandler: parcelChangeHandler,
-  } = useFormValidation((value) => value.trim().length === 4);
-
-  const {
     inputedValue: phoneInputedValue,
     valueIsValid: phoneIsValid,
     valueChangeHandler: phoneChangeHandler,
-  } = useFormValidation((value) => value.trim().length === 9);
+  } = useFormValidation((value) => value.trim().length === 9 && value > 0);
 
   useEffect(() => {
-    enteredValuesHandler(parcelInputedValue, phoneInputedValue);
-  }, [enteredValuesHandler, parcelInputedValue, phoneInputedValue]);
+    enteredValuesHandler(phoneInputedValue);
+  }, [enteredValuesHandler, phoneInputedValue]);
 
   function onSubmitHandler(event) {
     event.preventDefault();
@@ -32,17 +26,11 @@ export default function HomeForm({
   }
 
   let formIsValid = "initialState";
-  if (!phoneIsValid && !parcelIsValid) formIsValid = false;
+  if (!phoneIsValid) formIsValid = false;
 
   return (
     <form onSubmit={onSubmitHandler} className="form-wrapper">
       <h3>Please enter a Parcel ID or your phone number</h3>
-      <HomeFormInput
-        valueChangeHandler={parcelChangeHandler}
-        placeholder="1234"
-      >
-        Parcel ID
-      </HomeFormInput>
       <h3>OR</h3>
       <HomeFormInput
         valueChangeHandler={phoneChangeHandler}

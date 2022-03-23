@@ -4,25 +4,19 @@ import NavigationBar from "./components/NavigationBar";
 import Home from "./screens/Home";
 import Footer from "./components/Footer";
 import Orders from "./screens/Orders";
-import OrdersRouteError from "./components/OrdersRouteError";
 import "./App.css";
 
 export default function App() {
   const [showOrdersScreen, setShowOrdersScreen] = useState(false);
-  const [enteredValues, setEnteredValues] = useState({});
+  const [enteredPhone, setEnteredPhone] = useState();
 
   function showOrdersScreenHandler() {
-    setShowOrdersScreen(!showOrdersScreen);
+    setShowOrdersScreen(true);
   }
 
-  const enteredValuesHandler = useCallback((enteredParcel, enteredPhone) => {
-    setEnteredValues({
-      enteredParcel: enteredParcel,
-      enteredPhone: enteredPhone,
-    });
+  const enteredValuesHandler = useCallback((enteredPhone) => {
+    setEnteredPhone(enteredPhone);
   }, []);
-
-  console.log("enteredValues", enteredValues);
 
   return (
     <div>
@@ -37,20 +31,16 @@ export default function App() {
             />
           }
         />
-        {showOrdersScreen && (
-          <Route
-            path="/orders"
-            element={
-              <Orders
-                enteredValues={enteredValues}
-                showOrdersScreenHandler={showOrdersScreenHandler}
-              />
-            }
-          />
-        )}
-        {!showOrdersScreen && (
-          <Route path="/orders" element={<OrdersRouteError />} />
-        )}
+        <Route
+          path="/orders"
+          element={
+            <Orders
+              showOrdersScreen={showOrdersScreen}
+              enteredPhone={enteredPhone}
+              showOrdersScreenHandler={showOrdersScreenHandler}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </div>
