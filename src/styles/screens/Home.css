@@ -1,0 +1,12 @@
+.hero-wrapper {
+  background-image: url("../../assets/images/hero-image.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.home-body-wrapper img {
+  width: 100%;
+  height: auto;
+}
