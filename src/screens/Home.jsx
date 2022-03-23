@@ -1,8 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import homeImage from "../assets/images/home-image.png";
+
 import "../styles/screens/Home.css";
 
-export default function Home() {
-  function onParcelIDHandler() {}
+export default function Home({ showOrdersScreenHandler }) {
+  const navigate = useNavigate();
+
+  function onSubmitHandler(event) {
+    event.preventDefault();
+    showOrdersScreenHandler();
+    navigate("/orders");
+  }
+
+  function onParcelIDHandler(event) {}
 
   return (
     <div>
@@ -10,7 +20,7 @@ export default function Home() {
         <h1>DachsHunt</h1>
         <h1>We hunt your package as if it were a badger.</h1>
       </section>
-      <form className="home-body-wrapper">
+      <form onSubmit={onSubmitHandler} className="form-wrapper">
         <h3>Please enter a Parcel ID or your phone number</h3>
         <label>
           Parcel ID
