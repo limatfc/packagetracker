@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import Home from "./screens/Home";
@@ -9,10 +9,20 @@ import "./App.css";
 
 export default function App() {
   const [showOrdersScreen, setShowOrdersScreen] = useState(false);
+  const [enteredValues, setEnteredValues] = useState({});
 
   function showOrdersScreenHandler() {
     setShowOrdersScreen(!showOrdersScreen);
   }
+
+  const enteredValuesHandler = useCallback((enteredParcel, enteredPhone) => {
+    setEnteredValues({
+      enteredParcel: enteredParcel,
+      enteredPhone: enteredPhone,
+    });
+  }, []);
+
+  console.log("enteredValues", enteredValues);
 
   return (
     <div>
@@ -20,13 +30,21 @@ export default function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home showOrdersScreenHandler={showOrdersScreenHandler} />}
+          element={
+            <Home
+              showOrdersScreenHandler={showOrdersScreenHandler}
+              enteredValuesHandler={enteredValuesHandler}
+            />
+          }
         />
         {showOrdersScreen && (
           <Route
             path="/orders"
             element={
-              <Orders showOrdersScreenHandler={showOrdersScreenHandler} />
+              <Orders
+                enteredValues={enteredValues}
+                showOrdersScreenHandler={showOrdersScreenHandler}
+              />
             }
           />
         )}

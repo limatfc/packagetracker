@@ -1,27 +1,27 @@
 import { useState, useEffect } from "react";
 import fetchGET from "../scripts/fetchGET";
 
-export default function useFetchedDataHandler(url) {
+export default function useFetchedDataHandler() {
   const [fetchedData, setFetchedData] = useState([]);
-  const [fetchError, setFetchError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [fetchStatus, setFetchStatus] = useState(0);
+
+  const url = "https://my.api.mockaroo.com/insta-orders.json?key=e49e6840";
 
   useEffect(() => getFetchedData(url), [url]);
 
   async function getFetchedData(url) {
     try {
-      setIsLoading(true);
       const fetchGetData = await fetchGET(url);
       setFetchedData(fetchGetData);
-      setIsLoading(false);
+      setFetchStatus(1);
     } catch (error) {
-      setIsLoading(false);
-      setFetchError(true);
+      setFetchStatus(2);
+
       console.error(
         `It seems like the problem -${error.message}- was thrown when trying to fetch the ${url} URL.`
       );
     }
   }
 
-  return { fetchedData, isLoading, fetchError };
+  return { fetchedData, fetchStatus };
 }
