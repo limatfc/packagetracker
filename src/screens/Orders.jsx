@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import useFetchedDataHandler from "../hooks/use-fetched-data-handler";
 import dataManager from "../scripts/data-manager";
 import headerImage from "../assets/images/orders-header.png";
-import Error from "../components/Error";
+import FetchError from "../components/FetchError";
 import Loading from "../components/Loading";
 import OrdersItem from "../components/OrdersItem";
 import OrdersRouteError from "../components/OrdersRouteError";
@@ -18,7 +18,7 @@ export default function Orders({ enteredPhone, showOrdersScreen }) {
     navigate("/");
   }
   if (fetchStatus === 0) return <Loading />;
-  if (fetchStatus === 2) return <Error />;
+  if (fetchStatus === 2) return <FetchError />;
   if (!showOrdersScreen) return <OrdersRouteError />;
 
   const filteredItem = dataManager(enteredPhone, fetchedData);
