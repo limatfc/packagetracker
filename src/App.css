@@ -2,6 +2,8 @@ html,
 body {
   margin: 0;
   background-color: #f1f0eb;
+  height: 100%;
+  width: 100%;
 }
 
 @font-face {
@@ -15,6 +17,13 @@ body {
   font-family: "Ubuntu";
   src: local("Ubuntu"), url(./assets/fonts/Ubuntu-Bold.ttf) format("truetype");
   font-weight: bold;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 h1 {

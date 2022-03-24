@@ -1,4 +1,6 @@
+import dateConverter from "../scripts/date-converter";
 import bottomImage from "../assets/images/orders-items-bottom.png";
+import LocationMap from "./LocationMap";
 import "../styles/components/OrdersItem.css";
 
 export default function OrdersItem({ item }) {
@@ -11,12 +13,16 @@ export default function OrdersItem({ item }) {
     : "Your package is waiting for registration";
 
   const status = item.status.replace(/-/g, " ");
+
+  const eta = dateConverter(item.eta);
+  const lastUpdated = dateConverter(item.last_updated);
+
   return (
     <section className="orders-item-wrapper">
       <h3>Here are your package details:</h3>
       <ul>
         <li className="capitalize">Status: {status}</li>
-        <li>Estimated Time of Arrival: {item.eta}</li>
+        <li>Estimated Time of Arrival: {eta}</li>
         <li>Parcel ID: {item.parcel_id}</li>
         <li>Sender: {item.sender}</li>
         <li>Receiver: {item.user_name}</li>
@@ -29,9 +35,9 @@ export default function OrdersItem({ item }) {
         <li>It {verificationRequirenment} verification</li>
         <li>Location Coordinates:</li>
       </ul>
-      <div>GOOGLE MAPS API</div>
+      <LocationMap />
       <ul>
-        <li>Last Updated: {item.last_updated}</li>
+        <li>Last Updated: {lastUpdated}</li>
       </ul>
       <img
         src={bottomImage}
