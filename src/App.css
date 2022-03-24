@@ -19,29 +19,35 @@ body {
 
 h1 {
   font-size: 30px;
-  font-family: "Ubuntu";
-  color: #515e66;
 }
 
 h2 {
   font-size: 25px;
-  font-family: "Ubuntu";
-  color: #515e66;
 }
 
 h3 {
   font-size: 22px;
-  font-family: "Ubuntu";
-  color: #515e66;
 }
 
-p {
+p,
+.label {
   font-size: 18px;
-  font-family: "Ubuntu";
-  color: #515e66;
+}
+.label {
+  font-weight: bold;
 }
 small {
   font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+p,
+small,
+.label {
   font-family: "Ubuntu";
   color: #515e66;
+  margin: 0;
+  padding: 0;
 }

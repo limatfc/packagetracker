@@ -1,0 +1,54 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.input-wrapper small {
+  color: #ce2029;
+}
+
+.label {
+  font-weight: 400;
+}
+.label-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Ubuntu";
+  color: #515e66;
+  margin: 0;
+}
+.label-wrapper input {
+  width: 350px;
+  height: 50px;
+  padding: 0 8px;
+  margin: 4px 0;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Ubuntu";
+  color: #515e66;
+  margin: 0;
+}
+
+::placeholder {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Ubuntu";
+  color: #515e66;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.submit:disabled {
+  background-color: #c6c6c4;
+  color: #f1f1f1;
+  cursor: default;
+}
+
+.submit:hover {
+  cursor: pointer;
+  color: #936a4a;
+  text-decoration: underline;
+}

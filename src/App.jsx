@@ -4,6 +4,8 @@ import NavigationBar from "./components/NavigationBar";
 import Home from "./screens/Home";
 import Footer from "./components/Footer";
 import Orders from "./screens/Orders";
+import AboutUs from "./screens/AboutUs";
+import FAQ from "./screens/FAQ";
 import "./App.css";
 
 export default function App() {
@@ -41,6 +43,8 @@ export default function App() {
             />
           }
         />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
       <Footer />
     </div>

@@ -4,9 +4,17 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.hero-wrapper h1 {
+  padding: 0 24px;
 }
 
-.form-wrapper img {
-  width: 100%;
+.home-wrapper img {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
   height: auto;
 }

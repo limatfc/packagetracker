@@ -1,0 +1,32 @@
+.navigation-wrapper {
+  background-color: #dcbda1;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button-navigation {
+  font-size: 22px;
+  font-family: "Ubuntu";
+  color: #515e66;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button-navigation img {
+  height: 80px;
+}
+
+.button-navigation span {
+  display: none;
+}
+
+.margin {
+  margin-left: 20%;
+}
+.button-navigation:hover {
+  cursor: pointer;
+  color: #936a4a;
+  text-decoration: underline;
+}
