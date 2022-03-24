@@ -1,6 +1,6 @@
 import dateConverter from "../scripts/date-converter";
 import bottomImage from "../assets/images/orders-items-bottom.png";
-import LocationMap from "./LocationMap";
+import OrdersItemMap from "./OrdersItemMap";
 import "../styles/components/OrdersItem.css";
 
 export default function OrdersItem({ item }) {
@@ -35,7 +35,10 @@ export default function OrdersItem({ item }) {
         <li>It {verificationRequirenment} verification</li>
         <li>Location Coordinates:</li>
       </ul>
-      <LocationMap />
+      <OrdersItemMap
+        latitute={item.location_coordinate_latitude}
+        longitute={item.location_coordinate_longitude}
+      />
       <ul>
         <li>Last Updated: {lastUpdated}</li>
       </ul>
