@@ -7,7 +7,7 @@ import "../styles/components/Footer.css";
 export default function Footer() {
   return (
     <section className="footer-wrapper">
-      <p> Contact us</p>
+      <span className="label"> Contact us</span>
       <label>
         <img src={telephoneIcon} alt="a telefone icon with a arrow on top" />
         <small>+46 076 080 9234</small>
@@ -16,7 +16,7 @@ export default function Footer() {
         <img src={emailIcon} alt="an envelope icon" />
         <small>dachshunt@dachshunt.com</small>
       </label>
-      <p>Follow us</p>
+      <span className="label">Follow us</span>
       <a
         href="https://www.instagram.com/lima_fcthaisa/"
         target="_blank"
@@ -31,6 +31,7 @@ export default function Footer() {
       >
         <img src={facebookIcon} alt="facebook icon" />
       </a>
+      <small className="signature">@2022 - Thaisa Lima</small>
     </section>
   );
 }

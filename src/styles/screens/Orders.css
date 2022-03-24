@@ -1,0 +1,32 @@
+.orders-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 8px;
+}
+
+.orders-header img {
+  grid-row: 1 / span 2;
+  justify-self: center;
+  width: 70%;
+}
+
+.orders-header h2,
+.orders-header h3 {
+  align-self: center;
+}
+
+.orders-wrapper button {
+  display: block;
+  height: 60px;
+  background-color: #dcbda1;
+  width: 370px;
+  border-radius: 50px;
+  border: none;
+  margin: 0 auto 24px auto;
+}
+
+.orders-wrapper button:hover {
+  cursor: pointer;
+  color: #936a4a;
+  text-decoration: underline;
+}

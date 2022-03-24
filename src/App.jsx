@@ -39,7 +39,6 @@ export default function App() {
             <Orders
               showOrdersScreen={showOrdersScreen}
               enteredPhone={enteredPhone}
-              showOrdersScreenHandler={showOrdersScreenHandler}
             />
           }
         />

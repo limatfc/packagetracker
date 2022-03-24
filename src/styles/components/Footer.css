@@ -1,3 +1,31 @@
 .footer-wrapper {
   background-color: #dcbda1;
 }
+
+.footer-wrapper span {
+  padding: 16px;
+  display: block;
+}
+
+.footer-wrapper label {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-wrapper label img {
+  width: 30px;
+  height: auto;
+  padding-right: 8px;
+}
+
+.footer-wrapper a {
+  padding: 8px;
+}
+
+.signature {
+  display: block;
+  margin: 0 auto;
+  padding: 8px;
+  text-align: center;
+}

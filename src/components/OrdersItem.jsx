@@ -1,5 +1,5 @@
-import topImage from "../assets/images/orders-items-top.png";
 import bottomImage from "../assets/images/orders-items-bottom.png";
+import "../styles/components/OrdersItem.css";
 
 export default function OrdersItem({ item }) {
   const verificationRequirenment = item.verification_required
@@ -10,19 +10,19 @@ export default function OrdersItem({ item }) {
     ? "Your package has been registered and is ready to be picked up"
     : "Your package is waiting for registration";
 
+  const status = item.status.replace(/-/g, " ");
   return (
-    <section>
+    <section className="orders-item-wrapper">
       <h3>Here are your package details:</h3>
       <ul>
-        <li>Status: {item.status}</li>
+        <li className="capitalize">Status: {status}</li>
         <li>Estimated Time of Arrival: {item.eta}</li>
         <li>Parcel ID: {item.parcel_id}</li>
         <li>Sender: {item.sender}</li>
         <li>Receiver: {item.user_name}</li>
-        <li>Notes</li>
+        <li>Notes: {item.notes}</li>
       </ul>
-      <img src={topImage} alt="a dog lying, almost sleeping" />
-      <h3>{locationStatusMessage}</h3>
+      <h3 className="location-status">{locationStatusMessage}</h3>
       <h3>Location Details:</h3>
       <ul>
         <li>Location Name: {item.location_name}</li>
