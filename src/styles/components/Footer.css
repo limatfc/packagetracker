@@ -1,6 +1,7 @@
 .footer-wrapper {
   background-color: #dcbda1;
   flex-shrink: 0;
+  padding: 24px;
 }
 
 .footer-wrapper span {
@@ -29,4 +30,35 @@
   margin: 0 auto;
   padding: 8px;
   text-align: center;
+}
+
+@media (min-width: 750px) {
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .grid-left,
+  .footer-wrapper label {
+    grid-column-start: 2;
+  }
+  .grid-right,
+  .footer-wrapper a {
+    grid-column-start: 3;
+  }
+  .grid-right {
+    grid-row-start: 1;
+    justify-self: end;
+  }
+  .instagram,
+  .facebook {
+    grid-row-start: 2;
+    justify-self: end;
+  }
+  .instagram {
+    margin-right: 48px;
+  }
+  .signature {
+    grid-row: 4;
+    grid-column: 1 / span 4;
+  }
 }

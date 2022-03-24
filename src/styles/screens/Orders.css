@@ -1,7 +1,10 @@
+.orders-wrapper {
+  margin: 24px;
+}
+
 .orders-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 8px;
 }
 
 .orders-header img {
@@ -29,4 +32,22 @@
   cursor: pointer;
   color: #936a4a;
   text-decoration: underline;
+}
+
+@media (min-width: 750px) {
+  .orders-header {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .orders-header img {
+    width: 50%;
+    grid-column-start: 2;
+  }
+  .orders-header h2,
+  .orders-header h3 {
+    grid-column-start: 3;
+  }
+  .orders-wrapper button {
+    width: 800px;
+  }
 }

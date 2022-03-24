@@ -12,8 +12,21 @@
   width: 50%;
   height: auto;
   padding-bottom: 24px;
+  max-width: 300px;
 }
 
 .orders-route-error-wrapper h3 {
   padding-bottom: 24px;
+}
+
+@media (min-width: 750px) {
+  .orders-route-error-wrapper {
+    margin: 0 10% 0 10%;
+  }
+}
+
+@media (min-width: 1350px) {
+  .orders-route-error-wrapper {
+    margin: 24px 20% 0 20%;
+  }
 }

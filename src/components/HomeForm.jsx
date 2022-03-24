@@ -23,7 +23,7 @@ export default function HomeForm({
 
   return (
     <form onSubmit={onSubmitHandler} className="form-wrapper">
-      <h3>Please enter a Parcel ID or your phone number</h3>
+      <h3>Please enter a phone number:</h3>
       <HomeFormInput
         enteredValuesHandler={enteredValuesHandler}
         formValidation={formValidation}

@@ -1,5 +1,10 @@
 .orders-item-wrapper {
-  margin: 24px 24px 0 24px;
+  margin: 24px 0 0 0;
+}
+
+.orders-item-wrapper h2 {
+  text-decoration: underline;
+  padding: 24px 0;
 }
 .orders-item-wrapper h3 {
   padding: 16px 0;
@@ -15,8 +20,8 @@
 }
 
 .orders-item-wrapper li {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .orders-item-wrapper img {
@@ -37,4 +42,67 @@
 }
 .capitalize {
   text-transform: capitalize;
+}
+
+@media (min-width: 750px) {
+  .orders-item-wrapper {
+    margin: 24px 10% 0 10%;
+  }
+
+  .orders-item-wrapper img {
+    width: 20%;
+    max-width: 250px;
+  }
+  .orders-item-wrapper ul {
+    font-size: 21px;
+  }
+  .location-status {
+    text-align: center;
+  }
+  .orders-item-wrapper hr {
+    width: 50%;
+  }
+  .location-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .map-wrapper {
+    max-width: 500px;
+    grid-column-start: 2;
+    grid-row: 1 / span 3;
+  }
+  .text-row {
+    grid-column-start: 1;
+    grid-row: 1 / span 2;
+  }
+  .second {
+    margin-top: 35px;
+  }
+  .third {
+    margin-top: 95px;
+  }
+}
+
+@media (min-width: 850px) {
+  .second {
+    margin-top: 33px;
+  }
+  .third {
+    margin-top: 90px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .third {
+    margin-top: 65px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .orders-item-wrapper {
+    margin: 24px 20% 0 20%;
+  }
+  .third {
+    margin-top: 65px;
+  }
 }
