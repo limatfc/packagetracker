@@ -1,24 +1,15 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useFormValidation from "../hooks/use-form-validation";
+
 import HomeFormInput from "./HomeFormInput";
 import "../styles/components/HomeForm.css";
+import { useState } from "react";
 
 export default function HomeForm({
   showOrdersScreenHandler,
   enteredValuesHandler,
 }) {
+  const [formIsValid, setFormIsValid] = useState(false);
   const navigate = useNavigate();
-
-  const {
-    inputedValue: phoneInputedValue,
-    valueIsValid: phoneIsValid,
-    valueChangeHandler: phoneChangeHandler,
-  } = useFormValidation((value) => value.trim().length === 9 && value > 0);
-
-  useEffect(() => {
-    enteredValuesHandler(phoneInputedValue);
-  }, [enteredValuesHandler, phoneInputedValue]);
 
   function onSubmitHandler(event) {
     event.preventDefault();
@@ -26,18 +17,18 @@ export default function HomeForm({
     navigate("/orders");
   }
 
-  let formIsValid = "initialState";
-  if (!phoneIsValid) formIsValid = false;
+  function formValidation(valueIsValid) {
+    setFormIsValid(valueIsValid);
+  }
 
   return (
     <form onSubmit={onSubmitHandler} className="form-wrapper">
       <h3>Please enter a Parcel ID or your phone number</h3>
       <HomeFormInput
-        valueChangeHandler={phoneChangeHandler}
-        placeholder="76 090 3456"
-      >
-        Phone number
-      </HomeFormInput>
+        enteredValuesHandler={enteredValuesHandler}
+        formValidation={formValidation}
+      />
+
       <button className="label submit" type="submit" disabled={!formIsValid}>
         Track
       </button>
