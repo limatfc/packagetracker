@@ -1,0 +1,19 @@
+.about-wrapper {
+  margin: 24px 24px 0 24px;
+  flex-grow: 10;
+}
+
+.about-wrapper h2 {
+  padding-bottom: 24px;
+}
+
+.about-wrapper img {
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 60%;
+}
+
+.about-wrapper p {
+  padding-top: 24px;
+  text-align: justify;
+}

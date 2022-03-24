@@ -41,6 +41,8 @@ h3 {
 p,
 .label {
   font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 2.6%;
 }
 .label {
   font-weight: bold;

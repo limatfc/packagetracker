@@ -1,0 +1,14 @@
+[
+  {
+    "question": "How much does it cost to ship a package?",
+    "answer": "Shipping cost depends on origin, destination, service, package weight, and other considerations. Calculate Time and Cost helps you compare delivery times and published rates for sending DachsHunt shipments to destinations around the world."
+  },
+  {
+    "question": "How do I track using a DachsHunt Pacel ID number?",
+    "answer": "Using the tracking number automatically assigned to your shipment, visit the DachsHunt  homepage and enter the number in the corresponding field. It is a 4 digit number. You'll be able to see the shipping status,  the estimated arrival date, and the sender."
+  },
+  {
+    "question": "How do I track using a phone number?",
+    "answer": "Using the phone number registered in the package shipment. Visit the DachsHunt  homepage and enter the number in the corresponding field. It is a 9 digit number. You'll be able to see the shipping status,  the estimated arrival date, and the sender."
+  }
+]

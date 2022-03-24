@@ -1,0 +1,30 @@
+.faq-wrapper {
+  margin: 24px 24px 0 24px;
+  flex-grow: 10;
+}
+
+.faq-wrapper h2 {
+  padding-bottom: 24px;
+}
+
+.content-wrapper img {
+  width: 40%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.content-wrapper hr {
+  margin: 0 auto 24px auto;
+  padding: 0;
+  width: 70%;
+}
+
+.content-wrapper h3 {
+  padding-top: 24px;
+}
+
+.content-wrapper p {
+  padding: 24px 0 8px 0;
+  text-align: justify;
+}
