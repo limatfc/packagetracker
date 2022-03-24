@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
-import "../styles/components/OrdersItemMap.css";
 
 const containerStyle = {
-  width: "370px",
+  width: "100%",
   height: "350px",
+  margin: "0 auto",
 };
 
 export default function OrdersItemMap({ latitute, longitute }) {
@@ -27,7 +27,7 @@ export default function OrdersItemMap({ latitute, longitute }) {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={16}
+      zoom={18}
       onLoad={onLoad}
     >
       <Marker position={center} />

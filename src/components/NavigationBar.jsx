@@ -5,12 +5,12 @@ import "../styles/components/NavigationBar.css";
 export default function NavigationBar() {
   return (
     <section className="navigation-wrapper">
-      <Link className="button-navigation" to="/">
+      <Link className="button-navigation positioning" to="/">
         <img
           src={logo}
           alt="A black dachshund standing up, looked from the side."
         />
-        <span>DachsHunt</span>
+        <span className="button-navigation">DachsHunt</span>
       </Link>
       <Link className="button-navigation margin" to="/about">
         About us

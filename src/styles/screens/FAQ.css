@@ -3,28 +3,44 @@
   flex-grow: 10;
 }
 
-.faq-wrapper h2 {
-  padding-bottom: 24px;
-}
-
 .content-wrapper img {
   width: 40%;
   height: auto;
   display: block;
   margin: 0 auto;
+  max-width: 150px;
 }
 
 .content-wrapper hr {
-  margin: 0 auto 24px auto;
+  margin: 0 auto 0 auto;
   padding: 0;
   width: 70%;
+  max-width: 50%;
 }
 
 .content-wrapper h3 {
-  padding-top: 24px;
+  padding-top: 48px;
 }
 
 .content-wrapper p {
   padding: 24px 0 8px 0;
   text-align: justify;
+}
+
+@media (min-width: 750px) {
+  .content-wrapper img {
+    width: 20%;
+  }
+  .faq-wrapper {
+    margin: 24px 10% 0 10%;
+  }
+  .content-wrapper p {
+    padding: 24px 0 16px 0;
+  }
+}
+
+@media (min-width: 1350px) {
+  .faq-wrapper {
+    margin: 24px 20% 0 20%;
+  }
 }

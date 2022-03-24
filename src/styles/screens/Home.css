@@ -18,3 +18,20 @@
   width: 70%;
   height: auto;
 }
+
+@media (min-width: 750px) {
+  .hero-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+  }
+  .slogan {
+    grid-column-start: 1;
+  }
+  .home-wrapper img {
+    width: 45%;
+    height: auto;
+    max-width: 500px;
+  }
+}

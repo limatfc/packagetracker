@@ -10,7 +10,7 @@ export default function Home({
     <div className="home-wrapper">
       <section className="hero-wrapper">
         <h1>DachsHunt</h1>
-        <h1>We hunt your package as if it were a badger.</h1>
+        <h1 className="slogan">We hunt your package as if it were a badger.</h1>
       </section>
       <HomeForm
         showOrdersScreenHandler={showOrdersScreenHandler}

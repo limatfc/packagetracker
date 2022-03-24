@@ -1,25 +1,21 @@
-.fetch-error-wrapper {
+.loading-wrapper {
   flex-grow: 10;
   padding: 24px;
-  text-align: justify;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.fetch-error-wrapper img {
+
+.loading-wrapper img {
   width: 50%;
   height: auto;
   padding-bottom: 24px;
   max-width: 300px;
 }
 
-.fetch-error-wrapper h3 {
-  padding-bottom: 24px;
-}
-
 @media (min-width: 750px) {
-  .fetch-error-wrapper {
+  .loading-wrapper {
     margin: 0 10% 0 10%;
   }
 }

@@ -30,3 +30,22 @@
   color: #936a4a;
   text-decoration: underline;
 }
+
+@media (min-width: 750px) {
+  .button-navigation {
+    font-size: 28px;
+  }
+  .button-navigation span {
+    display: contents;
+    padding-left: 8px;
+    font-size: 28px;
+  }
+  .positioning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .margin {
+    margin-left: 40%;
+  }
+}

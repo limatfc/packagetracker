@@ -17,3 +17,31 @@
   padding-top: 24px;
   text-align: justify;
 }
+
+@media (min-width: 750px) {
+  .about-wrapper {
+    margin: 24px 10% 0 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .about-wrapper img {
+    grid-column-start: 2;
+    grid-row: 1 / span 3;
+    align-self: center;
+  }
+
+  .about-wrapper p {
+    align-self: start;
+  }
+  .about-wrapper h2 {
+    align-self: center;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1350px) {
+  .about-wrapper {
+    margin: 24px 20% 0 20%;
+  }
+}
