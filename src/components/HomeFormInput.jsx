@@ -1,24 +1,42 @@
+import { useEffect } from "react";
+import useFormValidation from "../hooks/use-form-validation";
 import "../styles/components/HomeFormInput.css";
 
 export default function HomeFormInput({
-  children,
-  valueChangeHandler,
-  placeholder,
+  enteredValuesHandler,
+  formValidation,
 }) {
+  const {
+    inputedValue,
+    valueIsValid,
+    valueChangeHandler,
+    hasError,
+    valueBlurHandler,
+  } = useFormValidation((value) => value.trim().length === 9 && value > 0);
+
+  useEffect(() => {
+    enteredValuesHandler(inputedValue);
+  }, [enteredValuesHandler, inputedValue]);
+
+  useEffect(() => {
+    formValidation(valueIsValid);
+  }, [formValidation, valueIsValid]);
+
   return (
     <div className="input-wrapper">
       <label className="label-wrapper">
-        {children}
+        Phone number
         <input
           type="number"
-          placeholder={placeholder}
+          placeholder="76 090 3456"
           onChange={valueChangeHandler}
+          onBlur={valueBlurHandler}
+          maxLength="9"
         />
       </label>
-      <small>
-        The {children} field must have {placeholder.replace(/\s/g, "").length}
-        characters.
-      </small>
+      {hasError && (
+        <small>The phone number field must have 9 characters.</small>
+      )}
     </div>
   );
 }
