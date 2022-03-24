@@ -1,0 +1,40 @@
+.orders-item-wrapper {
+  margin: 24px 24px 0 24px;
+}
+.orders-item-wrapper h3 {
+  padding: 16px 0;
+}
+
+.orders-item-wrapper ul {
+  font-family: "Ubuntu";
+  color: #515e66;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  list-style-type: none;
+}
+
+.orders-item-wrapper li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.orders-item-wrapper img {
+  width: 40%;
+  display: block;
+  margin: 24px auto 0 auto;
+}
+
+.orders-item-wrapper hr {
+  margin: 0 auto;
+  padding: 0;
+  width: 70%;
+}
+
+.location-status {
+  font-weight: 400;
+  text-decoration: underline;
+}
+.capitalize {
+  text-transform: capitalize;
+}

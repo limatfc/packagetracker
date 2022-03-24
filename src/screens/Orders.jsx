@@ -7,18 +7,14 @@ import Loading from "../components/Loading";
 import OrdersItem from "../components/OrdersItem";
 import OrdersRouteError from "../components/OrdersRouteError";
 import OrdersItemError from "../components/OrdersItemError";
+import "../styles/screens/Orders.css";
 
-export default function Orders({
-  showOrdersScreenHandler,
-  enteredPhone,
-  showOrdersScreen,
-}) {
+export default function Orders({ enteredPhone, showOrdersScreen }) {
   const navigate = useNavigate();
 
   const { fetchedData, fetchStatus } = useFetchedDataHandler();
 
   function onClickHandler() {
-    showOrdersScreenHandler(false);
     navigate("/");
   }
   if (fetchStatus === 0) return <Loading />;
@@ -35,14 +31,21 @@ export default function Orders({
   ));
 
   return (
-    <section>
-      <img
-        src={headerImage}
-        alt="a white dog sitting up, with its front legs in the air"
-      />
-      <h2>Welcome</h2>
+    <section className="orders-wrapper">
+      <header className="orders-header">
+        <img
+          src={headerImage}
+          alt="a white dog sitting up, with its front legs in the air"
+        />
+        <h2>Welcome!</h2>
+        <h3>
+          There are {filteredItem.length} parcels registered to this number
+        </h3>
+      </header>
       {ordersItem}
-      <button onClick={onClickHandler}>Go back</button>
+      <button className="label" onClick={onClickHandler}>
+        Go back
+      </button>
     </section>
   );
 }
