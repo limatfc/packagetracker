@@ -1,5 +1,6 @@
 .footer-wrapper {
   background-color: #dcbda1;
+  flex-shrink: 0;
 }
 
 .footer-wrapper span {
