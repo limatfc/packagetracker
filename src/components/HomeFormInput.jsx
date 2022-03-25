@@ -9,8 +9,8 @@ export default function HomeFormInput({
   const {
     inputedValue,
     valueIsValid,
-    valueChangeHandler,
     hasError,
+    valueChangeHandler,
     valueBlurHandler,
   } = useFormValidation((value) => value.trim().length === 9 && value > 0);
 
