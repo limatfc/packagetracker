@@ -1,4 +1,4 @@
-export default function dataManager(enteredPhone, fetchedData) {
+export default function filterByPhoneNumber(enteredPhone, fetchedData) {
   const filteredItem = fetchedData.filter((item) => {
     const databasePhone = item.user_phone.replace(/\s/g, "");
     const editedDatabasePhone = databasePhone.slice(3, 13);

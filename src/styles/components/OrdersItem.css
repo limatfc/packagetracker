@@ -1,16 +1,34 @@
-.orders-item-wrapper {
-  margin: 24px 0 0 0;
+.item-wrapper {
+  margin: 24px;
 }
 
-.orders-item-wrapper h2 {
+.toggle-button {
+  height: 60px;
+  background-color: #dcbda1;
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.item-details-wrapper {
+  margin: 24px 0 0 0;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.item-details-wrapper h2 {
   text-decoration: underline;
   padding: 24px 0;
 }
-.orders-item-wrapper h3 {
+.item-details-wrapper h3 {
   padding: 16px 0;
 }
 
-.orders-item-wrapper ul {
+.item-details-wrapper ul,
+.item-details-wrapper span {
   font-family: "Ubuntu";
   color: #515e66;
   margin: 0;
@@ -19,18 +37,22 @@
   list-style-type: none;
 }
 
-.orders-item-wrapper li {
-  padding-top: 4px;
-  padding-bottom: 4px;
+.item-details-wrapper li,
+.item-details-wrapper span {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-.orders-item-wrapper img {
+.item-details-wrapper span {
+  text-align: center;
+}
+.item-details-wrapper img {
   width: 40%;
   display: block;
   margin: 24px auto 0 auto;
 }
 
-.orders-item-wrapper hr {
+.item-details-wrapper hr {
   margin: 0 auto;
   padding: 0;
   width: 70%;
@@ -45,21 +67,21 @@
 }
 
 @media (min-width: 750px) {
-  .orders-item-wrapper {
-    margin: 24px 10% 0 10%;
+  .item-wrapper {
+    margin: 24px 10% 24px 10%;
   }
 
-  .orders-item-wrapper img {
+  .item-details-wrapper img {
     width: 20%;
     max-width: 250px;
   }
-  .orders-item-wrapper ul {
+  .item-details-wrapper ul {
     font-size: 21px;
   }
   .location-status {
     text-align: center;
   }
-  .orders-item-wrapper hr {
+  .item-details-wrapper hr {
     width: 50%;
   }
   .location-wrapper {
@@ -99,8 +121,8 @@
 }
 
 @media (min-width: 1350px) {
-  .orders-item-wrapper {
-    margin: 24px 20% 0 20%;
+  .item-wrapper {
+    margin: 24px 20% 24px 20%;
   }
   .third {
     margin-top: 65px;

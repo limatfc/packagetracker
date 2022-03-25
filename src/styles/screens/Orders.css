@@ -18,17 +18,17 @@
   align-self: center;
 }
 
-.orders-wrapper button {
+.orders-wrapper .go-back-button {
   display: block;
   height: 60px;
-  background-color: #dcbda1;
-  width: 370px;
+  background-color: #e0d4c7;
   border-radius: 50px;
   border: none;
   margin: 0 auto 24px auto;
+  width: 70%;
 }
 
-.orders-wrapper button:hover {
+.orders-wrapper .go-back-button:hover {
   cursor: pointer;
   color: #936a4a;
   text-decoration: underline;
@@ -47,7 +47,7 @@
   .orders-header h3 {
     grid-column-start: 3;
   }
-  .orders-wrapper button {
-    width: 800px;
+  .orders-wrapper .go-back-button {
+    width: 50%;
   }
 }

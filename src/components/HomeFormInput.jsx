@@ -31,7 +31,6 @@ export default function HomeFormInput({
           placeholder="76 090 3456"
           onChange={valueChangeHandler}
           onBlur={valueBlurHandler}
-          maxLength="9"
         />
       </label>
       {hasError && (
