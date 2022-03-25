@@ -8,6 +8,10 @@
 .input-wrapper small {
   color: #ce2029;
 }
+.input-wrapper label small::after {
+  content: ".";
+  visibility: hidden;
+}
 
 .label {
   font-weight: 400;
