@@ -5,23 +5,23 @@ import OrdersItemDetails from "./OrdersItemDetails";
 import "../styles/components/OrdersItem.css";
 
 export default function OrdersItem({ item }) {
-  const [show, setShow] = useState(false);
+  const [showItemDetails, setShowItemDetails] = useState(false);
 
   const status = item.status.replace(/-/g, " ");
 
-  const osClickHandler = () => {
-    setShow(!show);
-  };
+  function onClickHandler() {
+    setShowItemDetails(!showItemDetails);
+  }
 
   return (
     <div className="item-wrapper">
       <button
         className="capitalize label toggle-button"
-        onClick={osClickHandler}
+        onClick={onClickHandler}
       >
         <span>Parcel ID: {item.parcel_id}</span> <span>{status}</span>
       </button>
-      {show && <OrdersItemDetails item={item} />}
+      {showItemDetails && <OrdersItemDetails item={item} />}
     </div>
   );
 }
