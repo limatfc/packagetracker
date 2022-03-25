@@ -1,11 +1,13 @@
 import { useCallback, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
+import Error from "./components/Error";
 import Home from "./screens/Home";
 import Footer from "./components/Footer";
 import Orders from "./screens/Orders";
 import AboutUs from "./screens/AboutUs";
 import FAQ from "./screens/FAQ";
+import errorMessage from "./data/error-messages.json";
 import "./App.css";
 
 export default function App() {
@@ -44,6 +46,10 @@ export default function App() {
         />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route
+          path="*"
+          element={<Error message={errorMessage.generalRoutes} />}
+        />
       </Routes>
       <Footer />
     </div>
