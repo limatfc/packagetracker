@@ -14,14 +14,13 @@ export default function App() {
   const [showOrdersScreen, setShowOrdersScreen] = useState(false);
   const [enteredPhone, setEnteredPhone] = useState();
 
-  function showOrdersScreenHandler() {
-    setShowOrdersScreen(true);
-  }
-
   const enteredValuesHandler = useCallback((enteredPhone) => {
     setEnteredPhone(enteredPhone);
   }, []);
 
+  function showOrdersScreenHandler() {
+    setShowOrdersScreen(true);
+  }
   return (
     <div className="app">
       <NavigationBar />
