@@ -32,10 +32,10 @@ export default function HomeFormInput({
           onChange={valueChangeHandler}
           onBlur={valueBlurHandler}
         />
+        <small>
+          {hasError && "The phone number field must have 9 characters."}{" "}
+        </small>
       </label>
-      {hasError && (
-        <small>The phone number field must have 9 characters.</small>
-      )}
     </div>
   );
 }
