@@ -3,11 +3,10 @@ import useFetchedDataHandler from "../hooks/use-fetched-data-handler";
 import filterByPhoneNumber from "../scripts/filter-by-phone-number";
 import sortByStatus from "../scripts/sort-by-status";
 import headerImage from "../assets/images/orders-header.png";
-import FetchError from "../components/FetchError";
 import Loading from "../components/Loading";
 import OrdersItem from "../components/OrdersItem";
-import OrdersRouteError from "../components/OrdersRouteError";
-import OrdersItemError from "../components/OrdersItemError";
+import Error from "../components/Error";
+import errorMessage from "../data/error-messages.json";
 import "../styles/screens/Orders.css";
 
 export default function Orders({ enteredPhone, showOrdersScreen }) {
@@ -15,13 +14,15 @@ export default function Orders({ enteredPhone, showOrdersScreen }) {
   const { fetchedData, fetchStatus } = useFetchedDataHandler();
 
   if (fetchStatus === 0) return <Loading />;
-  if (fetchStatus === 2) return <FetchError />;
-  if (!showOrdersScreen) return <OrdersRouteError />;
+  if (fetchStatus === 2) return <Error message={errorMessage.fetch} />;
+  if (!showOrdersScreen) return <Error message={errorMessage.ordersRoute} />;
 
   const filteredItems = filterByPhoneNumber(enteredPhone, fetchedData);
 
   if (filteredItems.length === 0)
-    return <OrdersItemError enteredPhone={enteredPhone} />;
+    return (
+      <Error message={errorMessage.ordersItem} enteredPhone={enteredPhone} />
+    );
 
   const sortedItems = sortByStatus(filteredItems);
 

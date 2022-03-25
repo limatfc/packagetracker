@@ -1,4 +1,4 @@
-.orders-item-error-wrapper {
+.error-wrapper {
   flex-grow: 10;
   padding: 24px;
   text-align: justify;
@@ -7,14 +7,14 @@
   align-items: center;
   justify-content: center;
 }
-.orders-item-error-wrapper img {
+.error-wrapper img {
   width: 50%;
   height: auto;
   padding-bottom: 24px;
   max-width: 300px;
 }
 
-.orders-item-error-wrapper h3 {
+.error-wrapper h3 {
   padding-bottom: 24px;
 }
 
@@ -36,13 +36,13 @@
 }
 
 @media (min-width: 750px) {
-  .orders-item-error-wrapper {
+  .error-wrapper {
     margin: 0 10% 0 10%;
   }
 }
 
 @media (min-width: 1350px) {
-  .orders-item-error-wrapper {
+  .error-wrapper {
     margin: 24px 20% 0 20%;
   }
 }
