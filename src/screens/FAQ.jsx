@@ -5,7 +5,7 @@ import "../styles/screens/FAQ.css";
 export default function AboutUs() {
   const questionsContent = faqData.map((item) => {
     return (
-      <div className="content-wrapper">
+      <div key={item.id} className="content-wrapper">
         <h3>{item.question}</h3>
         <p>{item.answer}</p>
         <img src={image} alt="a white dog standing up" />
