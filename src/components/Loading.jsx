@@ -1,6 +1,7 @@
 import "../styles/components/Loading.css";
 import image from "../assets/images/loading-image.png";
 
+// excellent
 export default function Loading() {
   return (
     <section className="loading-wrapper">

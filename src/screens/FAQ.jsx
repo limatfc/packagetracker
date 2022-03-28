@@ -2,6 +2,7 @@ import faqData from "../data/FAQ.json";
 import image from "../assets/images/FAQ-image.png";
 import "../styles/screens/FAQ.css";
 
+// good
 export default function AboutUs() {
   const questionsContent = faqData.map((item) => {
     return (

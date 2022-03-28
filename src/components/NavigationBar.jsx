@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/icons/logo.png";
 import "../styles/components/NavigationBar.css";
 
+// good
 export default function NavigationBar() {
   return (
     <section className="navigation-wrapper">

@@ -4,6 +4,7 @@ import instagramIcon from "../assets/icons/instagram.png";
 import facebookIcon from "../assets/icons/facebook.png";
 import "../styles/components/Footer.css";
 
+// could be refactor the social media items can be components
 export default function Footer() {
   return (
     <section className="footer-wrapper">

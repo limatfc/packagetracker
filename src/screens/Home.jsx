@@ -2,6 +2,7 @@ import homeImage from "../assets/images/home-image.png";
 import HomeForm from "../components/HomeForm";
 import "../styles/screens/Home.css";
 
+// Naming -1 The argument names are too long, that's why Prettier are moving them to 2 lines
 export default function Home({
   showOrdersScreenHandler,
   enteredValuesHandler,

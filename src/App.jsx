@@ -21,9 +21,12 @@ export default function App() {
   function showOrdersScreenHandler() {
     setShowOrdersScreen(true);
   }
+
   return (
     <div className="app">
       <NavigationBar />
+      {/* Nesting -1 */}
+      {/* Why the ultra long names? */}
       <Routes>
         <Route
           path="/"

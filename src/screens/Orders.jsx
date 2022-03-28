@@ -13,6 +13,7 @@ export default function Orders({ enteredPhone, showOrdersScreen }) {
   const navigate = useNavigate();
   const { fetchedData, fetchStatus } = useFetchedDataHandler();
 
+  // Althouth this safeguards are well coded, this could have been done in other part of the app to make it more modular
   if (fetchStatus === 0) return <Loading />;
   if (fetchStatus === 2) return <Error message={errorMessage.fetch} />;
   if (!showOrdersScreen) return <Error message={errorMessage.ordersRoute} />;

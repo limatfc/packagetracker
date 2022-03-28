@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// The code itself is good, but it was not neccesary at all
 export default function useFormValidation(validationFunction) {
   const [inputedValue, setInputedValue] = useState("");
   const [isTouched, setIsTouched] = useState(false);

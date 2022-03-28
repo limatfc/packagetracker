@@ -2,6 +2,10 @@ import { useEffect } from "react";
 import useFormValidation from "../hooks/use-form-validation";
 import "../styles/components/HomeFormInput.css";
 
+// Coupling -1
+// This component its tighly coupled, the very name HomeFormInput tells me that.
+// Instead should be a Form that has an input field and that input field data should come from a json file
+// The placeholder for the phone number should be a clue that its super coupled with the homepage
 export default function HomeFormInput({
   enteredValuesHandler,
   formValidation,

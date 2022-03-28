@@ -1,6 +1,7 @@
 import image from "../assets/images/about-image.png";
 import "../styles/screens/AboutUs.css";
 
+// good (but ideal candidate to have trasnlated)
 export default function AboutUs() {
   return (
     <section className="about-wrapper">

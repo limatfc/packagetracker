@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import image from "../assets/images/error-image.png";
 import "../styles/components/Error.css";
 
+// good
 export default function Error({ message }) {
   return (
     <div className="error-wrapper">

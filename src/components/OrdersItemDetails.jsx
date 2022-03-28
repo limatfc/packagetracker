@@ -2,6 +2,7 @@ import dateConverter from "../scripts/date-converter";
 import OrdersItemMap from "./OrdersItemMap";
 import bottomImage from "../assets/images/orders-items-bottom.png";
 
+// good
 export default function OrdersItemDetails({ item }) {
   const eta = dateConverter(item.eta);
   const lastUpdated = dateConverter(item.last_updated);

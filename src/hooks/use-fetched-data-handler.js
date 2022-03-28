@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import fetchGET from "../scripts/fetchGET";
 
+// This is a React component (JSX) not a .JS
 export default function useFetchedDataHandler() {
   const [fetchedData, setFetchedData] = useState([]);
   const [fetchStatus, setFetchStatus] = useState(0);

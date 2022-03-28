@@ -7,6 +7,7 @@ const containerStyle = {
   margin: "0 auto",
 };
 
+// Great
 export default function OrdersItemMap({ latitute, longitute }) {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
