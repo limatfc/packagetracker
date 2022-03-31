@@ -2,24 +2,23 @@ import { useState } from "react";
 
 export default function useFormValidation(validationFunction) {
   const [inputedValue, setInputedValue] = useState("");
-  const [isTouched, setIsTouched] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
   const valueIsValid = validationFunction(inputedValue);
-  const hasError = isTouched && !valueIsValid;
 
   function valueChangeHandler(event) {
     setInputedValue(event.target.value);
   }
 
-  function valueBlurHandler() {
-    setIsTouched(true);
+  function valueFocusHandler() {
+    setIsFocused(true);
   }
 
   return {
     inputedValue,
     valueIsValid,
     valueChangeHandler,
-    hasError,
-    valueBlurHandler,
+    isFocused,
+    valueFocusHandler,
   };
 }

@@ -9,9 +9,9 @@ export default function HomeFormInput({
   const {
     inputedValue,
     valueIsValid,
-    hasError,
+    isFocused,
     valueChangeHandler,
-    valueBlurHandler,
+    valueFocusHandler,
   } = useFormValidation((value) => value.trim().length === 9 && value > 0);
 
   useEffect(() => {
@@ -30,10 +30,10 @@ export default function HomeFormInput({
           type="number"
           placeholder="76 090 3456"
           onChange={valueChangeHandler}
-          onBlur={valueBlurHandler}
+          onFocus={valueFocusHandler}
         />
         <small>
-          {hasError && "The phone number field must have 9 characters."}{" "}
+          {isFocused && "To have the full experience, enter 729478015."}
         </small>
       </label>
     </div>
