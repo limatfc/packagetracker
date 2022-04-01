@@ -1,0 +1,32 @@
+{
+  "home": {
+    "title": "DachsHunt",
+    "slogan": "We hunt your package as if it were a badger",
+    "instructions": "Insert a phone number on the field on the right and quickly check out all the packages registered to it.",
+    "inputLabel": "Phone number",
+    "buttonLabel": "Track",
+    "inputErrorMessage": "To have the full experience, enter 729478015."
+  },
+  "orders": {
+    "title": "Welcome!",
+    "subtitlePart1": "There are",
+    "subtitlePart2": "parcels registered to this number",
+    "goBackButton": "Go back",
+    "itemButton": "Parcel ID:",
+    "ordersItemDetails": {
+      "title": "Here are your package details:",
+      "detail1": "Estimated Time of Arrival:",
+      "detail2": "Sender:",
+      "detail3": "Receiver:",
+      "detail4": "Notes:",
+      "positiveLocationStatusMessage": "Your package has been registered and is ready to be picked up",
+      "negativeLocationStatusMessage": "Your package is waiting for registration",
+      "locationDetails": "Location Details:",
+      "locationName": "Location Name:",
+      "positiveVerificationRequirenment": "This location requires verification",
+      "negativeVerificationRequirenment": "This location doesn't require verification",
+      "locationCoordinates": "Location Coordinates:",
+      "lastUpdated": "Last Updated:"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "home": {
+    "title": "DachsHunt",
+    "slogan": "Vi jagar ditt paket som om det vore en grävling",
+    "instructions": "Ange ett telefonnummer i fältet till höger och kolla snabbt in alla paket som registrerats till den.",
+    "inputLabel": "Telefonnummer",
+    "buttonLabel": "Spår",
+    "inputErrorMessage": "För att få hela upplevelsen, gå in 729478015."
+  },
+  "orders": {
+    "title": "Välkommen!",
+    "subtitlePart1": "Det finns",
+    "subtitlePart2": "paket registrerade till detta nummer",
+    "goBackButton": "Gå tillbaka",
+    "itemButton": "Paket ID:",
+    "ordersItemDetails": {
+      "title": "Här är dina paketdetaljer:",
+      "detail1": "Beräknad ankomsttid:",
+      "detail2": "Avsändare:",
+      "detail3": "Mottagare:",
+      "detail4": "Anmärkningar:",
+      "positiveLocationStatusMessage": "Ditt paket har registrerats och är redo att hämtas",
+      "negativeLocationStatusMessage": "Ditt paket väntar på registrering",
+      "locationDetails": "Platsinformation:",
+      "locationName": "Platsnamn:",
+      "positiveVerificationRequirenment": "Denna plats kräver verifiering",
+      "negativeVerificationRequirenment": "Denna plats kräver ingen verifiering",
+      "locationCoordinates": "Platskoordinater:",
+      "lastUpdated": "Senast uppdaterad:"
+    }
+  }
+}

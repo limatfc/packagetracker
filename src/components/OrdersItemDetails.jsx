@@ -1,37 +1,48 @@
+import { useTranslation } from "react-i18next";
 import dateConverter from "../scripts/date-converter";
 import OrdersItemMap from "./OrdersItemMap";
 import bottomImage from "../assets/images/orders-items-bottom.png";
 
-// good
 export default function OrdersItemDetails({ item }) {
   const eta = dateConverter(item.eta);
   const lastUpdated = dateConverter(item.last_updated);
+  const { t } = useTranslation();
 
   const verificationRequirenment = item.verification_required
-    ? "requires"
-    : "doesn't require";
+    ? t("orders:ordersItemDetails:positiveVerificationRequirenment")
+    : t("orders:ordersItemDetails:negativeVerificationRequirenment");
 
   const locationStatusMessage = item.location_status_ok
-    ? "Your package has been registered and is ready to be picked up"
-    : "Your package is waiting for registration";
+    ? t("orders:ordersItemDetails:positiveLocationStatusMessage")
+    : t("orders:ordersItemDetails:negativeLocationStatusMessage");
 
   return (
     <section className="item-details-wrapper">
-      <h3>Here are your package details:</h3>
+      <h3>{t("orders:ordersItemDetails:title")}</h3>
       <ul>
-        <li>Estimated Time of Arrival: {eta}</li>
-        <li>Sender: {item.sender}</li>
-        <li>Receiver: {item.user_name}</li>
-        <li>Notes: {item.notes}</li>
+        <li>
+          {t("orders:ordersItemDetails:detail1")} {eta}
+        </li>
+        <li>
+          {t("orders:ordersItemDetails:detail2")} {item.sender}
+        </li>
+        <li>
+          {t("orders:ordersItemDetails:detail3")} {item.user_name}
+        </li>
+        <li>
+          {t("orders:ordersItemDetails:detail4")} {item.notes}
+        </li>
       </ul>
       <h3 className="location-status">{locationStatusMessage}</h3>
-      <h3>Location Details:</h3>
+      <h3>{t("orders:ordersItemDetails:locationDetails")}</h3>
       <ul className="location-wrapper">
-        <li className="text-row">Location Name: {item.location_name}</li>
-        <li className="text-row second">
-          This location {verificationRequirenment} verification
+        <li className="text-row">
+          {t("orders:ordersItemDetails:locationName")} {item.location_name}
         </li>
-        <li className="text-row third">Location Coordinates:</li>
+        <li className="text-row second">{verificationRequirenment}</li>
+        <li className="text-row third">
+          {t("orders:ordersItemDetails:locationCoordinates")}
+        </li>
         <li className="map-wrapper">
           <OrdersItemMap
             latitute={item.location_coordinate_latitude}
@@ -39,7 +50,9 @@ export default function OrdersItemDetails({ item }) {
           />
         </li>
       </ul>
-      <span>Last Updated: {lastUpdated}</span>
+      <span>
+        {t("orders:ordersItemDetails:lastUpdated")} {lastUpdated}
+      </span>
       <img
         src={bottomImage}
         alt="A dog sitting wearing a black colar seen from the side"

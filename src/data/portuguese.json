@@ -1,0 +1,32 @@
+{
+  "home": {
+    "title": "DachsHunt",
+    "slogan": "Nós caçamos o seu pedido como se ele fosse um texugo",
+    "instructions": "Digite o seu telefone no campo a direita e rapidamente cheque todos os pedidos registrados nele.",
+    "inputLabel": "Número de telefone",
+    "buttonLabel": "Buscar",
+    "inputErrorMessage": "Para ter a experiência completa, digite 729478015."
+  },
+  "orders": {
+    "title": "Bem-vindo(a/e)!",
+    "subtitlePart1": "Existem",
+    "subtitlePart2": "pedidos registradas neste número",
+    "goBackButton": "Voltar",
+    "itemButton": "ID do pedido:",
+    "ordersItemDetails": {
+      "title": "Aqui estão os detalhes do seu pedido:",
+      "detail1": "Tempo estimado de entrega:",
+      "detail2": "Remetente:",
+      "detail3": "Receptor:",
+      "detail4": "Observações:",
+      "positiveLocationStatusMessage": "Seu pedido foi registrado e está pronto para ser retirado",
+      "negativeLocationStatusMessage": "Seu pedido está aguardando registro",
+      "locationDetails": "Detalhes do local:",
+      "locationName": "Nome do local:",
+      "positiveVerificationRequirenment": "Este local requer verificação",
+      "negativeVerificationRequirenment": "Este local não requer verificação",
+      "locationCoordinates": "Coordenadas da local:",
+      "lastUpdated": "Última atualização:"
+    }
+  }
+}

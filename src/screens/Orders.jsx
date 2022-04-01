@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import useFetchedDataHandler from "../hooks/use-fetched-data-handler";
 import filterByPhoneNumber from "../scripts/filter-by-phone-number";
 import sortByStatus from "../scripts/sort-by-status";
@@ -12,6 +13,7 @@ import "../styles/screens/Orders.css";
 export default function Orders({ enteredPhone, isLoggedIn }) {
   const navigate = useNavigate();
   const { fetchedData, fetchStatus } = useFetchedDataHandler();
+  const { t } = useTranslation();
 
   // Althouth this safeguards are well coded, this could have been done in other part of the app to make it more modular
   if (fetchStatus === 0) return <Loading />;
@@ -38,14 +40,16 @@ export default function Orders({ enteredPhone, isLoggedIn }) {
           src={headerImage}
           alt="a white dog sitting up, with its front legs in the air"
         />
-        <h2>Welcome!</h2>
+        <h2>{t("orders:title")}</h2>
         <h3>
-          There are {sortedItems.length} parcels registered to this number
+          {`${t("orders:subtitlePart1")} ${sortedItems.length} ${t(
+            "orders:subtitlePart2"
+          )}`}
         </h3>
       </header>
       {ordersItem}
       <button className="label go-back-button" onClick={() => navigate("/")}>
-        Go back
+        {t("orders:goBackButton")}
       </button>
     </section>
   );

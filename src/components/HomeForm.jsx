@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 import HomeFormInput from "./HomeFormInput";
 import "../styles/components/HomeForm.css";
 import { useState } from "react";
@@ -7,6 +7,7 @@ import { useState } from "react";
 export default function HomeForm({ loginHandler, inputedDataHandler }) {
   const [formIsValid, setFormIsValid] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   function onSubmitHandler(event) {
     event.preventDefault();
@@ -20,17 +21,14 @@ export default function HomeForm({ loginHandler, inputedDataHandler }) {
 
   return (
     <form onSubmit={onSubmitHandler} className="form-wrapper">
-      <h3>
-        Insert a phone number on the field on the right and quickly check out
-        all the packages registered to it.
-      </h3>
+      <h3>{t("home:instructions")}</h3>
       <HomeFormInput
         inputedDataHandler={inputedDataHandler}
         formValidation={formValidation}
       />
 
       <button className="label submit" type="submit" disabled={!formIsValid}>
-        Track
+        {t("home:buttonLabel")}
       </button>
     </form>
   );

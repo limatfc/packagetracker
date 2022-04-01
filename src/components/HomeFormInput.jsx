@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import useFormValidation from "../hooks/use-form-validation";
 import "../styles/components/HomeFormInput.css";
 
@@ -7,6 +8,7 @@ import "../styles/components/HomeFormInput.css";
 // Instead should be a Form that has an input field and that input field data should come from a json file
 // The placeholder for the phone number should be a clue that its super coupled with the homepage
 export default function HomeFormInput({ inputedDataHandler, formValidation }) {
+  const { t } = useTranslation();
   const {
     inputedValue,
     valueIsValid,
@@ -26,16 +28,14 @@ export default function HomeFormInput({ inputedDataHandler, formValidation }) {
   return (
     <div className="input-wrapper">
       <label className="label-wrapper">
-        Phone number
+        {t("home:inputLabel")}
         <input
           type="number"
           placeholder="76 090 3456"
           onChange={valueChangeHandler}
           onFocus={valueFocusHandler}
         />
-        <small>
-          {isFocused && "To have the full experience, enter 729478015."}
-        </small>
+        <small>{isFocused && t("home:inputErrorMessage")}</small>
       </label>
     </div>
   );

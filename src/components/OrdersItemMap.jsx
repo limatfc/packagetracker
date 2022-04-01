@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
-
+import "../styles/components/OrdersItemMap.css";
 export default function OrdersItemMap({ latitute, longitute }) {
   const position = [latitute, longitute];
 
@@ -11,12 +11,7 @@ export default function OrdersItemMap({ latitute, longitute }) {
       center={position}
       zoom={16}
       scrollWheelZoom={false}
-      style={{
-        width: "310px",
-        height: "310px",
-        borderStyle: "solid",
-        borderColor: "##515e66;",
-      }}
+      className="map"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
