@@ -1,39 +1,41 @@
-import React, { useCallback } from "react";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import { Icon } from "leaflet";
+import "leaflet/dist/leaflet.css";
 
-const containerStyle = {
-  width: "100%",
-  height: "350px",
-  margin: "0 auto",
-};
-
-// Great
 export default function OrdersItemMap({ latitute, longitute }) {
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: "AIzaSyCF2WVR_gJMplUL9KGLzdVP9fnzEh4pHqw",
-  });
+  const position = [latitute, longitute];
 
-  const center = {
-    lat: latitute,
-    lng: longitute,
-  };
-
-  const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-  }, []);
-
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={18}
-      onLoad={onLoad}
+  return (
+    <MapContainer
+      center={position}
+      zoom={16}
+      scrollWheelZoom={false}
+      style={{
+        width: "310px",
+        height: "310px",
+        borderStyle: "solid",
+        borderColor: "##515e66;",
+      }}
     >
-      <Marker position={center} />
-    </GoogleMap>
-  ) : (
-    <></>
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker
+        position={position}
+        icon={
+          new Icon({
+            iconUrl: markerIconPng,
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+          })
+        }
+      >
+        <Popup>
+          A pretty CSS3 popup. <br /> Easily customizable.
+        </Popup>
+      </Marker>
+    </MapContainer>
   );
 }

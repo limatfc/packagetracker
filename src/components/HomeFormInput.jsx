@@ -6,21 +6,18 @@ import "../styles/components/HomeFormInput.css";
 // This component its tighly coupled, the very name HomeFormInput tells me that.
 // Instead should be a Form that has an input field and that input field data should come from a json file
 // The placeholder for the phone number should be a clue that its super coupled with the homepage
-export default function HomeFormInput({
-  enteredValuesHandler,
-  formValidation,
-}) {
+export default function HomeFormInput({ inputedDataHandler, formValidation }) {
   const {
     inputedValue,
     valueIsValid,
-    hasError,
+    isFocused,
     valueChangeHandler,
-    valueBlurHandler,
+    valueFocusHandler,
   } = useFormValidation((value) => value.trim().length === 9 && value > 0);
 
   useEffect(() => {
-    enteredValuesHandler(inputedValue);
-  }, [enteredValuesHandler, inputedValue]);
+    inputedDataHandler(inputedValue);
+  }, [inputedDataHandler, inputedValue]);
 
   useEffect(() => {
     formValidation(valueIsValid);
@@ -34,10 +31,10 @@ export default function HomeFormInput({
           type="number"
           placeholder="76 090 3456"
           onChange={valueChangeHandler}
-          onBlur={valueBlurHandler}
+          onFocus={valueFocusHandler}
         />
         <small>
-          {hasError && "The phone number field must have 9 characters."}{" "}
+          {isFocused && "To have the full experience, enter 729478015."}
         </small>
       </label>
     </div>

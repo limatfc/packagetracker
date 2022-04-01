@@ -4,16 +4,13 @@ import HomeFormInput from "./HomeFormInput";
 import "../styles/components/HomeForm.css";
 import { useState } from "react";
 
-export default function HomeForm({
-  showOrdersScreenHandler,
-  enteredValuesHandler,
-}) {
+export default function HomeForm({ loginHandler, inputedDataHandler }) {
   const [formIsValid, setFormIsValid] = useState(false);
   const navigate = useNavigate();
 
   function onSubmitHandler(event) {
     event.preventDefault();
-    showOrdersScreenHandler();
+    loginHandler();
     navigate("/orders");
   }
 
@@ -28,7 +25,7 @@ export default function HomeForm({
         all the packages registered to it.
       </h3>
       <HomeFormInput
-        enteredValuesHandler={enteredValuesHandler}
+        inputedDataHandler={inputedDataHandler}
         formValidation={formValidation}
       />
 

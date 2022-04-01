@@ -11,47 +11,36 @@ import errorMessage from "./data/error-messages.json";
 import "./App.css";
 
 export default function App() {
-  const [showOrdersScreen, setShowOrdersScreen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [enteredPhone, setEnteredPhone] = useState();
 
-  const enteredValuesHandler = useCallback((enteredPhone) => {
+  const inputedDataHandler = useCallback((enteredPhone) => {
     setEnteredPhone(enteredPhone);
   }, []);
 
-  function showOrdersScreenHandler() {
-    setShowOrdersScreen(true);
+  function loginHandler() {
+    setIsLoggedIn(true);
   }
+
+  const HomeScreen = (
+    <Home loginHandler={loginHandler} inputedDataHandler={inputedDataHandler} />
+  );
+
+  const OrdersScreen = (
+    <Orders isLoggedIn={isLoggedIn} enteredPhone={enteredPhone} />
+  );
+
+  const ErrorScreen = <Error message={errorMessage.generalRoutes} />;
 
   return (
     <div className="app">
       <NavigationBar />
-      {/* Nesting -1 */}
-      {/* Why the ultra long names? */}
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              showOrdersScreenHandler={showOrdersScreenHandler}
-              enteredValuesHandler={enteredValuesHandler}
-            />
-          }
-        />
-        <Route
-          path="/orders"
-          element={
-            <Orders
-              showOrdersScreen={showOrdersScreen}
-              enteredPhone={enteredPhone}
-            />
-          }
-        />
+        <Route path="/" element={HomeScreen} />
+        <Route path="/orders" element={OrdersScreen} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/faq" element={<FAQ />} />
-        <Route
-          path="*"
-          element={<Error message={errorMessage.generalRoutes} />}
-        />
+        <Route path="*" element={ErrorScreen} />
       </Routes>
       <Footer />
     </div>

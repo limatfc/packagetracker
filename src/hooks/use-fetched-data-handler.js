@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import fetchGET from "../scripts/fetchGET";
+import backupData from "../data/backup.json";
 
 // This is a React component (JSX) not a .JS
 export default function useFetchedDataHandler() {
@@ -16,11 +17,7 @@ export default function useFetchedDataHandler() {
       setFetchedData(fetchGetData);
       setFetchStatus(1);
     } catch (error) {
-      setFetchStatus(2);
-
-      console.error(
-        `It seems like the problem -${error.message}- was thrown when trying to fetch the ${url} URL.`
-      );
+      setFetchedData(backupData);
     }
   }
 
